@@ -7,7 +7,7 @@
 //
 
 extension SipHasher {
-    //MARK: Appending Integers
+    // MARK: Appending Integers
 
     /// Add `value` to this hash.
     ///
@@ -99,7 +99,7 @@ extension SipHasher {
 }
 
 extension SipHasher {
-    //MARK: Appending Floating Point Types
+    // MARK: Appending Floating Point Types
 
     /// Add `value` to this hash.
     ///
@@ -145,7 +145,7 @@ extension SipHasher {
 #endif
 
 extension SipHasher {
-    //MARK: Appending Optionals
+    // MARK: Appending Optionals
 
     /// Add `value` to this hash.
     ///

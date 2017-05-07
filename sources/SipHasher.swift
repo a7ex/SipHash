@@ -10,6 +10,8 @@ private func rotateLeft(_ value: UInt64, by amount: UInt64) -> UInt64 {
     return (value << amount) | (value >> (64 - amount))
 }
 
+// swiftlint:disable variable_name
+
 /// An implementation of the [SipHash-2-4](https://131002.net/siphash) hashing algorithm,
 /// suitable for use in projects outside the Swift standard library.
 /// (The Swift stdlib already includes SipHash; unfortunately its API is not public.)
@@ -41,7 +43,7 @@ public struct SipHasher {
     /// The number of bytes collected so far, or -1 if the hash value has already been finalized.
     var byteCount = 0
 
-    //MARK: Initializers
+    // MARK: Initializers
 
     /// Initialize a new instance with the default key, generated randomly the first time this initializer is called.
     public init() {
@@ -100,7 +102,7 @@ public struct SipHasher {
         return v0 ^ v1 ^ v2 ^ v3
     }
 
-    //MARK: Appending data
+    // MARK: Appending data
 
     /// Add all bytes in `buffer` to this hash.
     ///
@@ -192,7 +194,7 @@ public struct SipHasher {
         byteCount += buffer.count
     }
 
-    //MARK: Finalization
+    // MARK: Finalization
 
     /// Finalize this hash and return the hash value.
     ///

@@ -9,6 +9,8 @@
 import XCTest
 @testable import SipHash
 
+// swiftlint:disable trailing_comma
+
 class PrimitiveTypeTests: XCTestCase {
     func testBoolTrue() {
         let tests: [(Bool, [UInt8])] = [
@@ -40,7 +42,7 @@ class PrimitiveTypeTests: XCTestCase {
                 (0x0123456789abcdef, [0xef, 0xcd, 0xab, 0x89, 0x67, 0x45, 0x23, 0x01]),
                 (Int.max, [255, 255, 255, 255, 255, 255, 255, 127]),
                 (-1, [255, 255, 255, 255, 255, 255, 255, 255]),
-                (Int.min, [0, 0, 0, 0, 0, 0, 0, 128]),
+                (Int.min, [0, 0, 0, 0, 0, 0, 0, 128])
             ]
         case 4:
             tests = [
@@ -49,7 +51,7 @@ class PrimitiveTypeTests: XCTestCase {
                 (0x12345678, [0x78, 0x56, 0x34, 0x12]),
                 (Int.max, [255, 255, 255, 127]),
                 (-1, [255, 255, 255, 255]),
-                (Int.min, [0, 0, 0, 128]),
+                (Int.min, [0, 0, 0, 128])
             ]
         default:
             fatalError()
@@ -78,7 +80,7 @@ class PrimitiveTypeTests: XCTestCase {
                 (0, [0, 0, 0, 0, 0, 0, 0, 0]),
                 (1, [1, 0, 0, 0, 0, 0, 0, 0]),
                 (0x0123456789abcdef, [0xef, 0xcd, 0xab, 0x89, 0x67, 0x45, 0x23, 0x01]),
-                (UInt.max, [255, 255, 255, 255, 255, 255, 255, 255]),
+                (UInt.max, [255, 255, 255, 255, 255, 255, 255, 255])
             ]
         case 4:
             tests = [
@@ -113,7 +115,7 @@ class PrimitiveTypeTests: XCTestCase {
             (0x0123456789abcdef, [0xef, 0xcd, 0xab, 0x89, 0x67, 0x45, 0x23, 0x01]),
             (Int64.max, [255, 255, 255, 255, 255, 255, 255, 127]),
             (-1, [255, 255, 255, 255, 255, 255, 255, 255]),
-            (Int64.min, [0, 0, 0, 0, 0, 0, 0, 128]),
+            (Int64.min, [0, 0, 0, 0, 0, 0, 0, 128])
             ]
         for (value, data) in tests {
             var hash1 = SipHasher()
@@ -135,7 +137,7 @@ class PrimitiveTypeTests: XCTestCase {
             (0, [0, 0, 0, 0, 0, 0, 0, 0]),
             (1, [1, 0, 0, 0, 0, 0, 0, 0]),
             (0x0123456789abcdef, [0xef, 0xcd, 0xab, 0x89, 0x67, 0x45, 0x23, 0x01]),
-            (UInt64.max, [255, 255, 255, 255, 255, 255, 255, 255]),
+            (UInt64.max, [255, 255, 255, 255, 255, 255, 255, 255])
             ]
         for (value, data) in tests {
             var hash1 = SipHasher()
@@ -314,7 +316,7 @@ class PrimitiveTypeTests: XCTestCase {
         }()
         let oneExpected: Int = {
             var h = SipHasher()
-            let d = Array<UInt8>([0, 0, 128, 63])
+            let d = [UInt8]([0, 0, 128, 63])
             d.withUnsafeBufferPointer { b in
                 h.append(UnsafeRawBufferPointer(b))
             }

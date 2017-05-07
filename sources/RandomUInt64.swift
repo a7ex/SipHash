@@ -23,4 +23,3 @@
         fatalError("Unsupported platform")
     }
 #endif
-
