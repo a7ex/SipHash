@@ -1,2 +1,2 @@
 # SipHash
-Hash algorithme for primitive swift types, in order to comply to the washable protocol
+Hash algorithm for primitive swift types, in order to comply to the hashable protocol
